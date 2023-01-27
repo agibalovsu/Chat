@@ -1,0 +1,10 @@
+<%= turbo_stream_from "group#{group.id}" %>
+
+<%= turbo_frame_tag "group_#{group.id}" do %>
+  <div style="background: lightblue; padding: 10px; width: 400px;">
+    <h2><%= group.title %></h2>
+    <p>
+      <%= link_to "Enter to #{group.title}", group %>
+    </p>
+  </div>
+<% end %>

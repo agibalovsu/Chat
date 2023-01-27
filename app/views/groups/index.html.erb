@@ -1,0 +1,11 @@
+<h1>Chat</h1>
+
+<%= turbo_stream_from :groups %>
+
+<%= turbo_frame_tag :group_form do %>
+  <%= render 'groups/form', group: @group %>
+<% end %>
+
+<%= turbo_frame_tag :books do %>
+  <%= render @groups %>
+<% end %>
