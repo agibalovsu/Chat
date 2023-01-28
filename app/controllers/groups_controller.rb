@@ -9,11 +9,8 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
-  end
-
-  # GET /groups/new
-  def new
-    @group = Group.new
+    @messages = @group.messages
+    @message = @group.messages.new
   end
 
   # GET /groups/1/edit

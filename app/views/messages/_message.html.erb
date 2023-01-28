@@ -1,0 +1,8 @@
+<%= turbo_stream_from "message#{message.id}" %>
+
+<%= turbo_frame_tag "message_#{message.id}" do %>
+  <div style="background: lightblue; padding: 10px; width: 400px;">
+    <br><h2><%= message.title %></h2>
+  </div>
+  </br>
+<% end %>

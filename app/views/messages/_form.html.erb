@@ -1,0 +1,14 @@
+<%= form_with model: [@group, @message] do |form| %>
+
+  <%= render '/shared/errors', resource: @message %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_area :title %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

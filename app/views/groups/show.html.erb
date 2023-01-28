@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @group %>
+<h2><%= @group.title %></h2>
 
 <div>
   <%= link_to "Edit this group", edit_group_path(@group) %> |
@@ -8,3 +8,16 @@
 
   <%= button_to "Destroy this group", @group, method: :delete %>
 </div>
+
+<h3> Messages: </h3>
+
+<%= turbo_stream_from :messages %>
+
+<%= turbo_frame_tag :message_form do %>
+  <%= render 'messages/form', message: @message %>
+<% end %>
+
+<%= turbo_frame_tag :messages do %>
+  <%= render @group.messages %>
+<% end %>
+
